@@ -19,6 +19,9 @@ from databricks import agents
 
 # COMMAND ----------
 
+# hard code eval set since the lab environment does not allow agents.list_deployments() Please try it out on your internal workspace later.
+EVALUATION_SET_FQN = "genai_workshop.rag_adminuser3487541.my_agent_app_evaluation_set"
+
 df = spark.table(EVALUATION_SET_FQN)
 eval_df = df.toPandas()
 display(eval_df)
