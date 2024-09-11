@@ -26,12 +26,11 @@ w = WorkspaceClient()
 # MAGIC
 # MAGIC **MLflow Tracing** allows you to inspect what happens inside the chain.  This same tracing data will be logged from your deployed chain along with feedback that your stakeholders provide to a Delta Table.
 # MAGIC
-# MAGIC `# TODO: link docs for code-based logging`
+# MAGIC [Document for code-based logging](https://docs.databricks.com/en/generative-ai/create-log-agent.html#code-based-logging-workflow)
 
 # COMMAND ----------
 
 # Log the model to MLflow
-# TODO: remove example_no_conversion once this papercut is fixed
 with mlflow.start_run(run_name=POC_CHAIN_RUN_NAME):
     # Tag to differentiate from the data pipeline runs
     mlflow.set_tag("type", "chain")
@@ -136,14 +135,13 @@ print(f"\n\nReview App: {deployment_info.review_app_url}")
 # MAGIC
 # MAGIC Now, grant your stakeholders permissions to use the Review App.  Your stakeholders do not Databricks accounts as long as you have [insert docs].
 # MAGIC
-# MAGIC `#TODO: add docs link`
 
 # COMMAND ----------
 
-user_list = ["eric.peter@databricks.com"]
+# user_list = ["eric.peter@databricks.com"]
 
 # Set the permissions.  If successful, there will be no return value.
-agents.set_permissions(model_name=UC_MODEL_NAME, users=user_list, permission_level=agents.PermissionLevel.CAN_QUERY)
+# agents.set_permissions(model_name=UC_MODEL_NAME, users=user_list, permission_level=agents.PermissionLevel.CAN_QUERY)
 
 # COMMAND ----------
 
